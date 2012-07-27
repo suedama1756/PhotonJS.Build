@@ -64,7 +64,7 @@ function buildModuleFiles(moduleFiles, callback) {
             }
             else {
                 var generator = new _build.ModuleWrapperGenerator(module, {});
-                generator.generate();
+                console.log(generator.generate());
             }
 
             if (!outstandingModuleCount) {
