@@ -1,0 +1,1 @@
+exports.Compiler = require("./closure-compiler");
