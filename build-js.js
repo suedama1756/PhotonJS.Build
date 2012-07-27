@@ -21,7 +21,7 @@ function parseSwitchParameters(cmdSwitch, args, index, result, maxParameterCount
     return index;
 }
 
-var moduleFiles = [], args = process.argv, i = 2, n = args.length, options = {};
+var moduleFiles = [], args = process.argv, i = 2, n = args.length, options = {}, watch = false;
 while (i < n) {
     var cmdSwitch = args[i];
     switch (args[i]) {
@@ -31,6 +31,9 @@ while (i < n) {
         case '--formats':
             i = parseSwitchParameters('--formats', args, i + 1,
                 options.formats || (options.formats = []));
+            break;
+        case '--watch':
+            watch = true;
             break;
         default:
             throw new Error(_system.format("Invalid command switch '{0}'.", cmdSwitch))
@@ -84,11 +87,12 @@ function buildModuleFiles(moduleFiles, options, callback) {
 
 buildModuleFiles(moduleFiles, options);
 
-//process.stdin.resume();
-//process.stdin.setEncoding('utf8');
-//process.stdin.on('data', function (chunk) {
-//    if (chunk && chunk.toLowerCase() === 'exit') {
-//        process.exit(0);
-//    }
-//});
-//
+if (watch) {
+    process.stdin.resume();
+    process.stdin.setEncoding('utf8');
+    process.stdin.on('data', function (chunk) {
+        if (chunk && chunk.toLowerCase() === 'exit') {
+            process.exit(0);
+        }
+    });
+}
