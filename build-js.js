@@ -7,7 +7,11 @@ var _vm = require('vm'),
 
 function parseSwitchParameters(cmdSwitch, args, index, result, maxParameterCount) {
     var count = 0;
-    while (index < args.length && args[index].substring(0, 1) != '--') {
+    if (index === args.length) {
+        throw new Error("No value specified for command switch {0}.", cmdSwitch);
+    }
+
+    while (index < args.length && args[index].substring(0, 2) != '--') {
         if (maxParameterCount && ++count > maxParameterCount) {
             throw new Error("Invalid number of parameters for command switch '{0}'.", cmdSwitch);
         }
@@ -17,12 +21,16 @@ function parseSwitchParameters(cmdSwitch, args, index, result, maxParameterCount
     return index;
 }
 
-var moduleFiles = [], args = process.argv, i = 2, n = args.length;
+var moduleFiles = [], args = process.argv, i = 2, n = args.length, options = {};
 while (i < n) {
     var cmdSwitch = args[i];
     switch (args[i]) {
         case '--jsm':
             i = parseSwitchParameters('--jsm', args, i + 1, moduleFiles);
+            break;
+        case '--formats':
+            i = parseSwitchParameters('--formats', args, i + 1,
+                options.formats || (options.formats = []));
             break;
         default:
             throw new Error(_system.format("Invalid command switch '{0}'.", cmdSwitch))
@@ -50,7 +58,7 @@ function loadModuleFile(moduleFile, callback) {
     });
 }
 
-function buildModuleFiles(moduleFiles, callback) {
+function buildModuleFiles(moduleFiles, options, callback) {
     var outstandingModuleCount = moduleFiles.length;
 
     var errors = [];
@@ -63,7 +71,7 @@ function buildModuleFiles(moduleFiles, callback) {
                     moduleFileName, err.message));
             }
             else {
-                var generator = new _build.ModuleWrapperGenerator(module, {});
+                var generator = new _build.ModuleWrapperGenerator(module, options);
                 console.log(generator.generate());
             }
 
@@ -74,7 +82,7 @@ function buildModuleFiles(moduleFiles, callback) {
     });
 }
 
-buildModuleFiles(moduleFiles);
+buildModuleFiles(moduleFiles, options);
 
 //process.stdin.resume();
 //process.stdin.setEncoding('utf8');
