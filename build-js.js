@@ -4,47 +4,6 @@ var _vm = require('vm'),
     _build = require('build'),
     _system = require('system');
 
-
-function parseSwitchParameters(cmdSwitch, args, index, result, maxParameterCount) {
-    var count = 0;
-    if (index === args.length) {
-        throw new Error("No value specified for command switch {0}.", cmdSwitch);
-    }
-
-    while (index < args.length && args[index].substring(0, 2) != '--') {
-        if (maxParameterCount && ++count > maxParameterCount) {
-            throw new Error("Invalid number of parameters for command switch '{0}'.", cmdSwitch);
-        }
-        result.push(args[index++]);
-    }
-
-    return index;
-}
-
-var moduleFiles = [], args = process.argv, i = 2, n = args.length, options = {}, watch = false;
-while (i < n) {
-    var cmdSwitch = args[i];
-    switch (args[i]) {
-        case '--jsm':
-            i = parseSwitchParameters('--jsm', args, i + 1, moduleFiles);
-            break;
-        case '--formats':
-            i = parseSwitchParameters('--formats', args, i + 1,
-                options.formats || (options.formats = []));
-            break;
-        case '--watch':
-            watch = true;
-            break;
-        default:
-            throw new Error(_system.format("Invalid command switch '{0}'.", cmdSwitch))
-    }
-}
-
-if (moduleFiles.length === 0) {
-    throw new Error("No module files specified, user hte --jsm switch to specify one or more module files.");
-}
-
-
 function loadModuleFile(moduleFile, callback) {
     _fs.readFile(moduleFile, function (err, moduleContent) {
         var module = null;
@@ -85,14 +44,22 @@ function buildModuleFiles(moduleFiles, options, callback) {
     });
 }
 
-buildModuleFiles(moduleFiles, options);
+var arguments = require('./build-js-arguments').parse();
+buildModuleFiles(arguments.modules, {
+    formats:arguments.formats
+});
 
-if (watch) {
-    process.stdin.resume();
-    process.stdin.setEncoding('utf8');
-    process.stdin.on('data', function (chunk) {
-        if (chunk && chunk.toLowerCase() === 'exit') {
-            process.exit(0);
+if (arguments.watch) {
+    var readLine = require('readline');
+
+    var rl = readLine.createInterface({
+        input:process.stdin,
+        output:process.stdout
+    });
+
+    rl.on("line", function (text) {
+        if (text.toLowerCase() === 'exit') {
+            rl.close();
         }
     });
 }
