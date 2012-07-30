@@ -38,7 +38,7 @@ function buildModuleFiles(moduleFiles, options, callback) {
             }
 
             if (!outstandingModuleCount) {
-                _system.callback(callback, errors.length ? new Error(errors.join('\r\n')) : null);
+                _system.callback(callback, errors.length ? new Error(errors.join(_os.EOL)) : null);
             }
         });
     });
