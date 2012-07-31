@@ -24,19 +24,19 @@ exports.parse = function () {
         argv = process.argv, i = 2, n = argv.length;
 
     while (i < n) {
-        var commandSwitch = argv[i];
-        switch (argv[i]) {
+        var commandSwitch = argv[i++];
+        switch (commandSwitch) {
             case '--jsm':
-                i = parseSwitchParameters('--jsm', argv, i + 1, arguments.modules);
+                i = parseSwitchParameters('--jsm', argv, i, arguments.modules);
                 break;
             case '--formats':
-                i = parseSwitchParameters('--formats', argv, i + 1, arguments.formats = []);
+                i = parseSwitchParameters('--formats', argv, i, arguments.formats = []);
                 break;
             case '--watch':
-                watch = true;
+                arguments.watch = true;
                 break;
             default:
-                throw new Error(_system.format("Invalid command switch '{0}'.", commandSwitch))
+                throw new Error(_system.string.format("Invalid command switch '{0}'.", commandSwitch))
         }
     }
 

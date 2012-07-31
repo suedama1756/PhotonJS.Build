@@ -26,6 +26,9 @@ function buildModuleFiles(moduleFiles, options, callback) {
     var errors = [];
     moduleFiles.forEach(function (moduleFileName) {
         moduleFileName = _path.resolve(moduleFileName);
+
+        var _build = require('build');
+
         loadModuleFile(moduleFileName, function (err, module) {
             outstandingModuleCount--;
             if (err) {
@@ -45,9 +48,19 @@ function buildModuleFiles(moduleFiles, options, callback) {
 }
 
 var arguments = require('./build-js-arguments').parse();
-buildModuleFiles(arguments.modules, {
-    formats:arguments.formats
-});
+//buildModuleFiles(arguments.modules, {
+//    formats:arguments.formats
+//});
+
+var exampleFolder = _path.resolve('Examples\\Example1');
+var _directory = require('directory')
+var watcher = new _directory.Watcher(exampleFolder);
+watcher.addFiles(['file1.js', 'file2.js', 'module.jsm']);
+watcher.on('change', function (files) {
+        console.log(files.join('\r\n'));
+    }
+);
+
 
 if (arguments.watch) {
     var readLine = require('readline');
