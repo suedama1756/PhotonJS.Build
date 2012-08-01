@@ -1,1 +1,0 @@
-module.file1Message = "Message from file 2";

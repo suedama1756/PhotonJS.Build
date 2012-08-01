@@ -2,8 +2,9 @@
 ({
     name : 'module',
     files : [
-        'file1.js',
-        'file2.js'
+        'Nested\\Foo\\file01.js',
+        'file01.js',
+        'file02.js'
     ],
     dependencies : [
         {

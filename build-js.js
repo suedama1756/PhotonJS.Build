@@ -55,8 +55,8 @@ var arguments = require('./build-js-arguments').parse();
 var exampleFolder = _path.resolve('Examples\\Example1');
 var _fwatch = require('fwatch');
 
-var fileWatcher = new _fwatch.FileWatcher('D:\\PhotonJS\\Build\\Examples\\Example1');
-fileWatcher.watch(['file1.js', 'file2.js', 'module.jsm', 'Nested\\file1.js']);
+var fileWatcher = new _fwatch.FileWatcher('D:\\Work\\PhotonJS\\Build\\Examples\\Example1');
+fileWatcher.watch(['file01.js', 'file02.js', 'Nested\\Foo\\file01.js']);
 fileWatcher.on('change', function (files) {
         console.log(files.join('\r\n'));
     }
