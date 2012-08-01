@@ -1,1 +1,1 @@
-module.file2Message = "Message from file 2";
+module.file2Message = "Message from file 1";
