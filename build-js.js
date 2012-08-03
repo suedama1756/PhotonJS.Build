@@ -55,13 +55,19 @@ var arguments = require('./build-js-arguments').parse();
 var exampleFolder = _path.resolve('Examples\\Example1');
 var _fwatch = require('fwatch');
 
-var fileWatcher = new _fwatch.FileWatcher('D:\\PhotonJS\\Build\\Examples\\Example1');
-fileWatcher.watchFiles(['file01.js', 'file02.js', 'Nested\\Foo\\file01.js']);
-fileWatcher.on('change', function (files) {
-        console.log(files.join('\r\n'));
-    }
-);
+//var fileWatcher = new _fwatch.FileWatcher('D:\\PhotonJS\\Build\\Examples\\Example1');
+//fileWatcher.watchFiles(['file01.js', 'file02.js', 'Nested\\Foo\\file01.js']);
+//fileWatcher.on('change', function (files) {
+//        console.log(files.join('\r\n'));
+//    }
+//);
 
+var directoryWatch = new _fwatch.DirectoryWatcher('D:\\Work\\PhotonJS\\Build\\Examples\\Example1');
+directoryWatch.on('change', function(created, deleted, modified) {
+    console.log('Created: ' + created.join('\n\n'));
+    console.log('Deleted: ' + deleted.join('\n\n'));
+    console.log('Modified: ' + modified.join('\n\n'));
+});
 
 if (arguments.watchFiles) {
     var readLine = require('readline');
