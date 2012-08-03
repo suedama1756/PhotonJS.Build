@@ -19,7 +19,7 @@ function parseSwitchParameters(commandSwitch, args, index, result, maxParameterC
 exports.parse = function () {
     var arguments = {
             modules:[],
-            watch:false
+            watchFiles:false
         },
         argv = process.argv, i = 2, n = argv.length;
 
@@ -33,7 +33,7 @@ exports.parse = function () {
                 i = parseSwitchParameters('--formats', argv, i, arguments.formats = []);
                 break;
             case '--watch':
-                arguments.watch = true;
+                arguments.watchFiles = true;
                 break;
             default:
                 throw new Error(_system.string.format("Invalid command switch '{0}'.", commandSwitch))
