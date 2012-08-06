@@ -2,6 +2,7 @@
   <dictionary name="Jason Young">
     <words>
       <w>argv</w>
+      <w>eval</w>
       <w>formatters</w>
       <w>fwatch</w>
       <w>mtime</w>
