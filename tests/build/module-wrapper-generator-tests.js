@@ -1,8 +1,5 @@
 var _build = require('../../node_modules/build/build.js');
 
-// Define window so we can hang stuff off it using eval
-var window;
-
 var basicModule = {
     name:'module',
     dependencies:{
@@ -12,6 +9,16 @@ var basicModule = {
         }
     }
 };
+
+var nestedNamespaceModule = {
+    name : 'nested.module',
+    dependencies:{
+        '$' : {
+            amd:'jquery',
+            global:'jQuery'
+        }
+    }
+}
 
 var basicModuleContent = [
     'var data = "";',
@@ -36,13 +43,16 @@ var defineDependencies;
 var factoryParameters;
 var defineLog;
 
+// Define window so we can hang stuff off it using eval
+var window;
+
 function resolveDependencies(dependencies) {
-    return dependencies.map(function(dependency){
+    return dependencies.map(function (dependency) {
         if (dependency === 'exports') {
             return {};
         } else {
             return {
-                name : dependency
+                name:dependency
             }
         }
     });
@@ -77,8 +87,8 @@ function mockAmd() {
 function mockGlobal() {
     // define window
     window = {
-        jQuery : {
-            name : 'jquery'
+        jQuery:{
+            name:'jquery'
         }
     };
 
@@ -95,7 +105,7 @@ function mockGlobal() {
 function mockAmdAndGlobal() {
     var mockAmdHandle = mockAmd(), mockGlobalHandle = mockGlobal();
     return {
-        close : function() {
+        close:function () {
             mockAmdHandle.close();
             mockGlobalHandle.close();
         }
@@ -127,7 +137,7 @@ exports["When generating Global"] = {
             basicModuleContent);
         callback();
     },
-    tearDown : function(callback) {
+    tearDown:function (callback) {
         this.mock_.close();
         callback();
     },
@@ -136,11 +146,11 @@ exports["When generating Global"] = {
             'Global module has not been defined.');
         test.done();
     },
-    "Should name dependencies correctly in factory" : function(test) {
+    "Should name dependencies correctly in factory":function (test) {
         test.ok(factoryParameters['$'].name === 'jquery');
         test.done();
     },
-    "Should correctly attach content to the global namespace" : function(test) {
+    "Should correctly attach content to the global namespace":function (test) {
         window.module.setData(1);
         test.ok(window.module.getData() === 1,
             'Module content has not been defined correctly.');
@@ -148,14 +158,14 @@ exports["When generating Global"] = {
     }
 };
 
-exports['When using both AMD and Global'] = {
-    setUp : function(callback) {
+exports['When generating both AMD and Global'] = {
+    setUp:function (callback) {
         this.mock_ = mockAmdAndGlobal();
         generateAndEvaluateModule(basicModule, { formats:['amd', 'global'] },
             basicModuleContent);
         callback();
     },
-    tearDown : function(callback) {
+    tearDown:function (callback) {
         this.mock_.close();
         callback();
     },
@@ -167,3 +177,27 @@ exports['When using both AMD and Global'] = {
         test.done();
     }
 };
+
+exports['When generating Global with nested namespace'] = {
+    setUp:function (callback) {
+        this.mock_ = mockGlobal();
+        generateAndEvaluateModule(nestedNamespaceModule, { formats:['global'] },
+            basicModuleContent);
+        callback();
+    },
+    tearDown : function(callback) {
+        this.mock_.close();
+        callback();
+    },
+    "Should define global namespace":function (test) {
+        test.ok(window.nested.module,
+            'Global module has not been defined.');
+        test.done();
+    },
+    "Should correctly attach content to the global namespace":function (test) {
+        window.nested.module.setData(1);
+        test.ok(window.nested.module.getData() === 1,
+            'Module content has not been defined correctly.');
+        test.done();
+    }
+}
