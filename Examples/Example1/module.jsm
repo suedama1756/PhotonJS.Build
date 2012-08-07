@@ -11,5 +11,8 @@
             amd:'jquery',
             global:'jQuery'
         }
+    },
+    environment : {
+       dependencies : ['window', 'navigator']
     }
 });

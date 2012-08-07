@@ -11,12 +11,30 @@ var basicModule = {
 };
 
 var nestedNamespaceModule = {
-    name : 'nested.module',
+    name:'nested.module',
     dependencies:{
-        '$' : {
+        '$':{
             amd:'jquery',
             global:'jQuery'
         }
+    }
+}
+
+var environmentModule = {
+    name:'module',
+    environment:{
+        dependencies:[
+            // Name of environmental variable
+            'window',
+            // Name of environmental variable using object notation
+            {
+                name : 'navigator'
+            },
+            // Name of environmental variable using an alias for referencing the variable within module scope
+            {
+                name : 'document', alias : 'doc'
+            }
+        ]
     }
 }
 
@@ -25,6 +43,11 @@ var basicModuleContent = [
     'module.getData = function() { return data; };',
     'module.setData = function(value) { data = value; };',
     'factoryParameters["$"] = $;'];
+
+var environmentModuleContent = [
+    'window.isAccessible = true;',
+    'doc.isAccessible = true;',
+    'navigator.isAccessible = true;'];
 
 function generateModule(module, options, content) {
     var generator = new _build.ModuleWrapperGenerator(module, options),
@@ -44,7 +67,7 @@ var factoryParameters;
 var defineLog;
 
 // Define window so we can hang stuff off it using eval
-var window;
+var window, navigator, document;
 
 function resolveDependencies(dependencies) {
     return dependencies.map(function (dependency) {
@@ -92,12 +115,18 @@ function mockGlobal() {
         }
     };
 
+    navigator = {};
+
+    document = {};
+
     // define mapped dependencies (object that holds the dependencies as they are known by the internals of the module)
     factoryParameters = {};
 
     return {
         close:function () {
-            window = null;
+            window = undefined;
+            navigator = undefined;
+            document = undefined;
         }
     }
 }
@@ -185,7 +214,7 @@ exports['When generating Global with nested namespace'] = {
             basicModuleContent);
         callback();
     },
-    tearDown : function(callback) {
+    tearDown:function (callback) {
         this.mock_.close();
         callback();
     },
@@ -198,6 +227,26 @@ exports['When generating Global with nested namespace'] = {
         window.nested.module.setData(1);
         test.ok(window.nested.module.getData() === 1,
             'Module content has not been defined correctly.');
+        test.done();
+    }
+}
+
+
+exports['When generating with environmental dependencies'] = {
+    setUp:function (callback) {
+        this.mock_ = mockGlobal();
+        generateAndEvaluateModule(environmentModule, { formats:['global'] },
+            environmentModuleContent);
+        callback();
+    },
+    tearDown:function (callback) {
+        this.mock_.close();
+        callback();
+    },
+    "Should wrap with environmental access function":function (test) {
+        test.ok(navigator.isAccessible);
+        test.ok(document.isAccessible);
+        test.ok(window.isAccessible);
         test.done();
     }
 }
