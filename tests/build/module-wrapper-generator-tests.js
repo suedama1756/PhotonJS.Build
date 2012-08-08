@@ -1,4 +1,5 @@
-var _build = require('../../node_modules/build/build.js');
+var _build = require('../../node_modules/build/build.js'),
+    _system = require('../../node_modules/system/system.js');
 
 var basicModule = {
     name:'module',
@@ -52,6 +53,10 @@ var environmentModuleContent = [
 function generateModule(module, options, content) {
     var generator = new _build.ModuleWrapperGenerator(module, options),
         result = generator.generate(content);
+    result = [
+        result.preAmble,
+        _system.string.indent(content.join('\r\n'), result.contentIndent, '    '),
+        result.postAmble].join('\r\n');
     console.log(result);
     return result;
 }
