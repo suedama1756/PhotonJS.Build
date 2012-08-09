@@ -54,9 +54,9 @@ function generateModule(module, options, content) {
     var generator = new _build.ModuleWrapperGenerator(module, options),
         result = generator.generate(content);
     result = [
-        result.preAmble,
+        result.header,
         _system.string.indent(content.join('\r\n'), result.contentIndent, '    '),
-        result.postAmble].join('\r\n');
+        result.footer].join('\r\n');
     console.log(result);
     return result;
 }
