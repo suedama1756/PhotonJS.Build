@@ -62,12 +62,16 @@ var _fwatch = require('fwatch');
 //    }
 //);
 
-var directoryWatch = new _fwatch.DirectoryWatcher('D:\\Work\\PhotonJS\\Build\\Examples\\Example1');
-directoryWatch.on('change', function(created, deleted, modified) {
-    console.log('Created: ' + created.join('\n\n'));
-    console.log('Deleted: ' + deleted.join('\n\n'));
-    console.log('Modified: ' + modified.join('\n\n'));
-});
+//var directoryWatch = new _fwatch.DirectoryWatcher('D:\\Work\\PhotonJS\\Build\\Examples\\Example1');
+//directoryWatch.on('change', function(created, deleted, modified) {
+//    console.log('Created: ' + created.join('\n\n'));
+//    console.log('Deleted: ' + deleted.join('\n\n'));
+//    console.log('Modified: ' + modified.join('\n\n'));
+//});
+
+var module = _vm.runInThisContext(_fs.readFileSync(arguments.modules[0]));
+
+
 
 if (arguments.watchFiles) {
     var readLine = require('readline');
