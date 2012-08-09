@@ -69,8 +69,15 @@ var _fwatch = require('fwatch');
 //    console.log('Modified: ' + modified.join('\n\n'));
 //});
 
-var module = _vm.runInThisContext(_fs.readFileSync(arguments.modules[0]));
+var mod = _vm.runInThisContext(_fs.readFileSync(arguments.modules[0]));
 
+var build = require('build');
+var moduleGenerator = new build.ModuleGenerator({
+    errorStrategy:build.ModuleGenerator.ERROR_STRATEGY_TODO
+});
+var result = moduleGenerator.generate(mod, '/Users/JYoung/Documents/PhotonJS/Build/Examples/Example1');
+console.log(result.map);
+console.log(result.src);
 
 
 if (arguments.watchFiles) {

@@ -3,7 +3,8 @@
     name:'module',
     files:[
         'file01.js',
-        'file02.js'
+        'file02.js',
+        '/Nested/test.js'
     ],
     dependencies:{
         '$':{
