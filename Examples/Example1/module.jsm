@@ -6,20 +6,20 @@
         'file02.js',
         '/Nested/test.js'
     ],
-    dependencies:[
-        {
-            import : '$',
-            source : {
-                amd:[
-                    'jquery',
-                    'jquery.ui.core'
-                ],
-                global:'jQuery'
-            }
+    dependencies:{
+        '$':{
+            amd:[
+                'jquery',
+                'jquery.ui.core'
+            ],
+            global:'jQuery'
+        },
+        '<<anonymous>>' : {
+            amd:[]
         }
-    ],
-    environment : {
-       dependencies : ['window', 'navigator']
+    },
+    environment:{
+        dependencies:['window', 'navigator']
     }
 });
 

@@ -49,6 +49,16 @@ var mixinModule = {
     }
 }
 
+var anonymousModule = {
+    name : 'module',
+    dependencies: {
+        '<<anonymous>>' : {
+            amd : ['jquery', 'jquery.ui.core']
+        }
+    }
+}
+
+
 var basicModuleContent = [
     'var data = "";',
     'module.getData = function() { return data; };',
@@ -287,6 +297,30 @@ exports['When generating with amd mixin'] = {
     },
     'Should create factory with correct number of arguments':function (test) {
         test.ok(/function\(module, \$\)/gi.test(this.moduleText_));
+        test.done();
+    }
+}
+
+exports['When generating with amd anonymous'] = {
+    setUp:function (callback) {
+        this.mock_ = mockAmd();
+        this.moduleText_ = generateAndEvaluateModule(anonymousModule,
+            {
+                formats:['amd']
+            }, []);
+        callback();
+    },
+    tearDown : function(callback) {
+        this.mock_.close();
+        callback();
+    },
+    'Should invoke define with correct dependencies':function (test) {
+        test.deepEqual(defineLog[0].dependencies,
+            ['exports', 'jquery', 'jquery.ui.core']);
+        test.done();
+    },
+    'Should create factory with correct number of arguments':function (test) {
+        test.ok(/function\(module\)/gi.test(this.moduleText_));
         test.done();
     }
 }
