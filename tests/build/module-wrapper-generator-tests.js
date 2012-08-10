@@ -1,5 +1,6 @@
 var _build = require('../../node_modules/build/build.js'),
-    _system = require('../../node_modules/system/system.js');
+    _system = require('../../node_modules/system/system.js'),
+    _os = require('os');
 
 var basicModule = {
     name:'module',
@@ -75,9 +76,9 @@ function generateModule(module, options, content) {
         result = generator.generate(content);
     result = [
         result.header,
-        _system.string.indent(content.join('\r\n'), result.contentIndent, '    '),
-        result.footer].join('\r\n');
-    console.log(result);
+        _system.string.indent(content.join(_os.EOL), result.contentIndent, '    '),
+        result.footer].join(_os.EOL);
+    console.log(result + _os.EOL + _os.EOL);
     return result;
 }
 
@@ -317,6 +318,29 @@ exports['When generating with amd anonymous'] = {
     'Should invoke define with correct dependencies':function (test) {
         test.deepEqual(defineLog[0].dependencies,
             ['exports', 'jquery', 'jquery.ui.core']);
+        test.done();
+    },
+    'Should create factory with correct number of arguments':function (test) {
+        test.ok(/function\(module\)/gi.test(this.moduleText_));
+        test.done();
+    }
+}
+
+exports['When generating with global anonymous'] = {
+    setUp:function (callback) {
+        this.mock_ = mockGlobal();
+        this.moduleText_ = generateAndEvaluateModule(anonymousModule,
+            {
+                formats:['global']
+            }, []);
+        callback();
+    },
+    tearDown : function(callback) {
+        this.mock_.close();
+        callback();
+    },
+    'Should create factory call with correct number of arguments' : function(test) {
+        test.ok(/factory\(ns\);/gi.test(this.moduleText_));
         test.done();
     },
     'Should create factory with correct number of arguments':function (test) {
