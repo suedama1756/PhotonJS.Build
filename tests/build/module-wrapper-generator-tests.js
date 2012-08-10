@@ -39,6 +39,16 @@ var environmentModule = {
     }
 }
 
+var mixinModule = {
+    name : 'module',
+    dependencies : {
+        '$' : {
+            amd : ['jquery', 'jquery.ui.core'],
+            global : 'jQuery'
+        }
+    }
+}
+
 var basicModuleContent = [
     'var data = "";',
     'module.getData = function() { return data; };',
@@ -64,6 +74,7 @@ function generateModule(module, options, content) {
 function generateAndEvaluateModule(module, options, content) {
     var moduleText = generateModule(module, options, content);
     eval(moduleText);
+    return moduleText;
 }
 
 var define;
@@ -252,6 +263,30 @@ exports['When generating with environmental dependencies'] = {
         test.ok(navigator.isAccessible);
         test.ok(document.isAccessible);
         test.ok(window.isAccessible);
+        test.done();
+    }
+}
+
+exports['When generating with amd mixin'] = {
+    setUp:function (callback) {
+        this.mock_ = mockAmd();
+        this.moduleText_ = generateAndEvaluateModule(mixinModule,
+            {
+                formats:['amd']
+            }, []);
+        callback();
+    },
+    tearDown : function(callback) {
+        this.mock_.close();
+        callback();
+    },
+    'Should invoke define with correct dependencies':function (test) {
+        test.deepEqual(defineLog[0].dependencies,
+            ['exports', 'jquery', 'jquery.ui.core']);
+        test.done();
+    },
+    'Should create factory with correct number of arguments':function (test) {
+        test.ok(/function\(module, \$\)/gi.test(this.moduleText_));
         test.done();
     }
 }
