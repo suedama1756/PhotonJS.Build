@@ -1,0 +1,28 @@
+Support following command line options:
+
+--jsm=jsm1 jsm2...
+--output=../output/%module%-debug.js
+--output-source-map=../output/%module%-debug.js.map
+--add-source-map-directive
+--monitor
+--formats amd global
+
+Potentially we can support a properties file in the future for other options
+
+--propertiesFile fileName
+
+Where the properties file looks something like:
+
+{
+    module1 : {
+        output
+        formats
+    }
+}
+
+Add grunt support
+
+
+
+
+
