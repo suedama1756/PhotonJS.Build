@@ -1,5 +1,11 @@
 var _system = require('system');
 
+function parseSwitchParameter(commandSwitch, args, index, result, parameterName) {
+    var data = [], index = parseSwitchParameters(commandSwitch, args, index, data, 1);
+    result[parameterName] = data[0];
+    return index;
+}
+
 function parseSwitchParameters(commandSwitch, args, index, result, maxParameterCount) {
     var count = 0;
     if (index === args.length) {
@@ -19,7 +25,7 @@ function parseSwitchParameters(commandSwitch, args, index, result, maxParameterC
 exports.parse = function () {
     var arguments = {
             modules:[],
-            watchFiles:false
+            monitor:false
         },
         argv = process.argv, i = 2, n = argv.length;
 
@@ -27,13 +33,22 @@ exports.parse = function () {
         var commandSwitch = argv[i++];
         switch (commandSwitch) {
             case '--jsm':
-                i = parseSwitchParameters('--jsm', argv, i, arguments.modules);
+                i = parseSwitchParameters(commandSwitch, argv, i, arguments.modules);
                 break;
             case '--formats':
-                i = parseSwitchParameters('--formats', argv, i, arguments.formats = []);
+                i = parseSwitchParameters(commandSwitch, argv, i, arguments.formats = []);
                 break;
-            case '--watch':
-                arguments.watchFiles = true;
+            case '--monitor':
+                arguments.monitor = true;
+                break;
+            case '--add-source-map-directive':
+                arguments.addSourceMapDirective = true;
+                break;
+            case '--configuration':
+                i = parseSwitchParameter(commandSwitch, argv, i, arguments, 'configuration');
+                break;
+            case '--error-strategy':
+                i = parseSwitchParameter(commandSwitch, argv, i, arguments, 'errorStrategy');
                 break;
             default:
                 throw new Error(_system.string.format("Invalid command switch '{0}'.", commandSwitch))

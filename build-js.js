@@ -1,7 +1,7 @@
 var _vm = require('vm'),
     _fs = require('fs'),
     _path = require('path'),
-     _build = require('build'),
+    _build = require('build'),
     _system = require('system'),
     _os = require('os');
 
@@ -28,35 +28,22 @@ function buildModuleFiles(moduleFiles, options, callback) {
     moduleFiles.forEach(function (moduleFileName) {
         moduleFileName = _path.resolve(moduleFileName);
 
-        var _build = require('build');
+        var builder = new _build.ModuleBuilder(options);
+        try {
+            builder.buildFile(moduleFileName);
+        }
+        catch (e) {
+            console.error(e);
+        }
 
-        loadModuleFile(moduleFileName, function (err, module) {
-            outstandingModuleCount--;
-            if (err) {
-                errors.push(_system.string.format("Failed to load module file '{0}', error: '{1}'.",
-                    moduleFileName, err.message));
-            }
-            else {
-                var generator = new _build.ModuleGenerator(options), basePath = _path.dirname(moduleFileName);
-                var output = generator.generate(module, basePath);
-                output.src += _system.string.format('{0}//@ sourceMappingURL={1}.js.map',
-                    _os.EOL, module.name)
-                _fs.writeFileSync(_path.join(basePath, module.name + '.js'), output.src);
-                _fs.writeFileSync(_path.join(basePath, module.name + '.js.map'), output.map);
-            }
-
-            if (!outstandingModuleCount) {
-                _system.callback(callback, errors.length ? new Error(errors.join(_os.EOL)) : null);
-            }
-        });
+        if (!--outstandingModuleCount) {
+            _system.callback(callback, errors.length ? new Error(errors.join(_os.EOL)) : null);
+        }
     });
 }
 
-var arguments = require('./build-js-arguments').parse();
-buildModuleFiles(arguments.modules, {
-    formats:arguments.formats,
-    errorStrategy:_build.ModuleGenerator.ERROR_STRATEGY_TODO
-});
+var options = require('./build-js-arguments').parse();
+buildModuleFiles(options.modules, options);
 
 //var exampleFolder = _path.resolve('Examples\\Example1');
 //var _fwatch = require('fwatch');
@@ -75,7 +62,7 @@ buildModuleFiles(arguments.modules, {
 //    console.log('Modified: ' + modified.join('\n\n'));
 //});
 
-if (arguments.watchFiles) {
+if (options.monitor) {
     var readLine = require('readline');
 
     var rl = readLine.createInterface({

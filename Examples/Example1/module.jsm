@@ -20,5 +20,11 @@
     },
     environment:{
         dependencies:['window', 'navigator']
+    },
+    configuration : {
+        debug : {
+            srcOutput : '%module%-debug.js',
+            mapOutput : '../output/%module%-debug.js.map'
+        }
     }
 });
