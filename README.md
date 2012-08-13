@@ -143,8 +143,8 @@ Example:
     node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
         --configuration debug --monitor --error-strategy TODO
 
-Formats
--------
+Output Formats
+--------------
 
 By default, the module produced will support all available formats (current AMD & Global). To manually specify
 which formats the module should support use the --formats command line option.
