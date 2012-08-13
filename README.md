@@ -11,9 +11,8 @@ The PhotonJS.Build module builder can be used to build module files supporting m
 packaging information in a separate file developers do not have to pollute their source code with module specific
 semantics, they can focus on writing clear maintainable code which can be deployed easily to a variety of module formats.
 
-## Example Module File:
+Below is an example module file:
 
-    /** @namespace module */
     ({
         name:'module',
         /**
@@ -43,7 +42,7 @@ semantics, they can focus on writing clear maintainable code which can be deploy
         },
         environment:{
             /**
-             * Environment dependencies
+             * Optional environment dependencies
              */
             dependencies:[
                 /**
@@ -68,3 +67,46 @@ semantics, they can focus on writing clear maintainable code which can be deploy
             }
         }
     });
+
+Building the module via the command line:
+
+    node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive --configuration debug
+
+Produces:
+
+    ```javascript
+    (function(window, doc){
+        (function(factory) {
+            if (typeof define === 'function' && define['amd']) {
+                define(['exports', 'jquery'], factory);
+            } else if (window) {
+                var ns = window.module = window.module || {};
+                factory(ns, window.jQuery);
+            }
+        })(function(module, $) {
+            /**
+             * Gets a message from file 1
+             * @return {String}
+             */
+            module.getMessage1 = function () {
+                return "Message from file 1.";
+            }
+            /**
+             * Gets a message from file 2
+             * @return {String}
+             */
+            module.getMessage2 = function() {
+                return "Message from file 2.";
+            }
+        });
+    })(window, document);
+    //@ sourceMappingURL=module-debug.js.map
+    ```
+
+Source Maps
+-----------
+
+Source maps are automatically created for the module. Source maps allow you to debug the module as
+if you had deployed the individual files it is comprised of (currently only supported in chrome). For more
+information on source maps including how to enable them,
+check out http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/
