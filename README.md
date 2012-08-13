@@ -132,9 +132,9 @@ Error Strategies
 During development files may get renamed, deleted, etc. because of this it may be useful to specify how missing module
 files should be handled. There are three different options:
 
-IGNORE: Ignore errors
-THROW:  An exception it thrown
-TODO:   A '// TODO: ' comment is output in the module file which provides details of the missing file.
+* IGNORE: Ignore errors
+* THROW:  An exception it thrown
+* TODO:   A '// TODO: ' comment is output in the module file which provides details of the missing file.
 
     node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
         --configuration debug --monitor --error-strategy TODO
