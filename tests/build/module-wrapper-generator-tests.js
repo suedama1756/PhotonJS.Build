@@ -1,4 +1,4 @@
-var _build = require('../../node_modules/build/build.js'),
+var _build = require('../../node_modules/module-build/module-build.js'),
     _system = require('../../node_modules/system/system.js'),
     _os = require('os');
 

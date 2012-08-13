@@ -154,3 +154,28 @@ Example:
     node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
         --configuration debug --formats Amd
 
+Advanced AMD RequireJS Options
+----------------------------
+
+In AMD shims can be used to import modules that add themselves to existing global namespace. For example,
+jquery.ui.core does not directly export anything, it simply adds itself to jquery/$. The 'amd' dependencies
+section supports this mechanism in two ways.
+
+```javascript
+dependencies : {
+    '$' : {
+        // multiple dependencies are pulled in and exposed via the '$' dependency parameter.
+        amd : ['jquery', 'jquery.ui.core']
+    }
+}
+```
+
+```javascript
+dependencies: {
+    //  mark dependency without exposing it as a dependency parameter.
+    '<<anonymous>>' : {
+        amd : ['jquery', 'jquery.ui.core']
+    }
+}
+```
+
