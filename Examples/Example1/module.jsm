@@ -1,6 +1,6 @@
 /** @namespace module */
 ({
-    name:'module',
+    name:'photon.examples.module',
     /**
      * An ordered list of the files that make up the module.
      */

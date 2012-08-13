@@ -15,7 +15,7 @@ Below is an example module file:
 
 ```javascript
 ({
-    name:'module',
+    name:'company.module',
     /**
      * An ordered list of the files that make up the module.
      */
@@ -83,7 +83,10 @@ Produces:
         if (typeof define === 'function' && define['amd']) {
             define(['exports', 'jquery'], factory);
         } else if (window) {
-            var ns = window.module = window.module || {};
+            var nsi = 'photon.examples.module'.split('.'), ns = window;
+            for (var i= 0, n=nsi.length; i<n; i++) {
+                ns = ns[nsi[i]] = ns[nsi[i]] || {};
+            }
             factory(ns, window.jQuery);
         }
     })(function(module, $) {
@@ -103,7 +106,7 @@ Produces:
         }
     });
 })(window, document);
-//@ sourceMappingURL=module-debug.js.map
+//@ sourceMappingURL=photon.examples.module-debug.js.map
 ```
 
 Source Maps
@@ -136,4 +139,12 @@ TODO:   A '// TODO: ' comment is output in the module file which provides detail
     node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
         --configuration debug --monitor --error-strategy TODO
 
+Formats
+-------
+
+By default, the module produced will support all available formats (current AMD & Global). To manually specify
+which formats the module should support use the --formats command line option.
+
+    node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
+        --configuration debug --formats Amd
 
