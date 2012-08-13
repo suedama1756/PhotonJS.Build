@@ -74,34 +74,34 @@ Building the module via the command line:
 
 Produces:
 
-    ```javascript
-    (function(window, doc){
-        (function(factory) {
-            if (typeof define === 'function' && define['amd']) {
-                define(['exports', 'jquery'], factory);
-            } else if (window) {
-                var ns = window.module = window.module || {};
-                factory(ns, window.jQuery);
-            }
-        })(function(module, $) {
-            /**
-             * Gets a message from file 1
-             * @return {String}
-             */
-            module.getMessage1 = function () {
-                return "Message from file 1.";
-            }
-            /**
-             * Gets a message from file 2
-             * @return {String}
-             */
-            module.getMessage2 = function() {
-                return "Message from file 2.";
-            }
-        });
-    })(window, document);
-    //@ sourceMappingURL=module-debug.js.map
-    ```
+```javascript
+(function(window, doc){
+    (function(factory) {
+        if (typeof define === 'function' && define['amd']) {
+            define(['exports', 'jquery'], factory);
+        } else if (window) {
+            var ns = window.module = window.module || {};
+            factory(ns, window.jQuery);
+        }
+    })(function(module, $) {
+        /**
+         * Gets a message from file 1
+         * @return {String}
+         */
+        module.getMessage1 = function () {
+            return "Message from file 1.";
+        }
+        /**
+         * Gets a message from file 2
+         * @return {String}
+         */
+        module.getMessage2 = function() {
+            return "Message from file 2.";
+        }
+    });
+})(window, document);
+//@ sourceMappingURL=module-debug.js.map
+```
 
 Source Maps
 -----------
