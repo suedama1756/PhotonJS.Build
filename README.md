@@ -157,14 +157,14 @@ Example:
 Advanced AMD RequireJS Options
 ----------------------------
 
-In AMD shims can be used to import modules that add themselves to existing global namespace. For example,
+In AMD shims can be used to import modules that add themselves to existing global namespaces. For example,
 jquery.ui.core does not directly export anything, it simply adds itself to jquery/$. The 'amd' dependencies
 section supports this mechanism in two ways.
 
 ```javascript
 dependencies : {
     '$' : {
-        // multiple dependencies are pulled in and exposed via the '$' dependency parameter.
+        // multiple dependencies are pulled in and exposed via the '$' factory parameter.
         amd : ['jquery', 'jquery.ui.core']
     }
 }
@@ -172,7 +172,7 @@ dependencies : {
 
 ```javascript
 dependencies: {
-    //  mark dependency without exposing it as a dependency parameter.
+    //  define dependency without exposing it as a factory parameter.
     '<<anonymous>>' : {
         amd : ['jquery', 'jquery.ui.core']
     }
