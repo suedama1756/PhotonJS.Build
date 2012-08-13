@@ -7,7 +7,7 @@ Module Builder
 --------------
 
 The PhotonJS.Build module builder can be used to build module files supporting multiple module formats, including
-'AMD' and 'Global'. Module packaging information is maintained in a JavaScript Module (.jsm) file. By placing module
+'amd' and 'global'. Module packaging information is maintained in a JavaScript Module (.jsm) file. By placing module
 packaging information in a separate file developers do not have to pollute their source code with module specific
 semantics, they can focus on writing clear maintainable code which can be deployed easily to a variety of module formats.
 
@@ -146,13 +146,13 @@ Example:
 Output Formats
 --------------
 
-By default, the module produced will support all available formats (current AMD & Global). To manually specify
+By default, the module produced will support all available formats (current 'amd' & 'global'). To manually specify
 which formats the module should support use the --formats command line option.
 
 Example:
 
     node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
-        --configuration debug --formats Amd
+        --configuration debug --formats amd
 
 Advanced AMD RequireJS Options
 ----------------------------
