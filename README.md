@@ -13,58 +13,58 @@ semantics, they can focus on writing clear maintainable code which can be deploy
 
 ## Example Module File:
 
-/** @namespace module */
-({
-    name:'module',
-    /**
-     * An ordered list of the files that make up the module.
-     */
-    files:[
-        'file01.js',
-        'file02.js'
-    ],
-    /**
-     * Module dependencies
-     */
-    dependencies:{
+    /** @namespace module */
+    ({
+        name:'module',
         /**
-         * '$' The variable that will be used to reference the dependency
+         * An ordered list of the files that make up the module.
          */
-        '$':{
-            /**
-             * The AMD dependency
-             */
-            amd:'jquery',
-            /**
-             * The global dependency, resolved as window.jQuery
-             */
-            global:'jQuery'
-        }
-    },
-    environment:{
+        files:[
+            'file01.js',
+            'file02.js'
+        ],
         /**
-         * Environment dependencies
+         * Module dependencies
          */
-        dependencies:[
+        dependencies:{
             /**
-             * Reference window using a parameter named 'window'
+             * '$' The variable that will be used to reference the dependency
              */
-            'window',
+            '$':{
+                /**
+                 * The AMD dependency
+                 */
+                amd:'jquery',
+                /**
+                 * The global dependency, resolved as window.jQuery
+                 */
+                global:'jQuery'
+            }
+        },
+        environment:{
             /**
-             * Reference document using a parameter named 'doc'.
+             * Environment dependencies
              */
-            {
-                alias:'doc',
-                name:'document'
-            }]
-    },
-    /**
-     * Configuration information
-     */
-    configuration:{
-        debug:{
-            srcOutput:'../output/%module%-debug.js',
-            mapOutput:'../output/%module%-debug.js.map'
+            dependencies:[
+                /**
+                 * Reference window using a parameter named 'window'
+                 */
+                'window',
+                /**
+                 * Reference document using a parameter named 'doc'.
+                 */
+                {
+                    alias:'doc',
+                    name:'document'
+                }]
+        },
+        /**
+         * Configuration information
+         */
+        configuration:{
+            debug:{
+                srcOutput:'../output/%module%-debug.js',
+                mapOutput:'../output/%module%-debug.js.map'
+            }
         }
-    }
-});
+    });
