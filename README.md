@@ -13,60 +13,62 @@ semantics, they can focus on writing clear maintainable code which can be deploy
 
 Below is an example module file:
 
-    ({
-        name:'module',
+```javascript
+({
+    name:'module',
+    /**
+     * An ordered list of the files that make up the module.
+     */
+    files:[
+        'file01.js',
+        'file02.js'
+    ],
+    /**
+     * Module dependencies
+     */
+    dependencies:{
         /**
-         * An ordered list of the files that make up the module.
+         * '$' The variable that will be used to reference the dependency
          */
-        files:[
-            'file01.js',
-            'file02.js'
-        ],
-        /**
-         * Module dependencies
-         */
-        dependencies:{
+        '$':{
             /**
-             * '$' The variable that will be used to reference the dependency
+             * The AMD dependency
              */
-            '$':{
-                /**
-                 * The AMD dependency
-                 */
-                amd:'jquery',
-                /**
-                 * The global dependency, resolved as window.jQuery
-                 */
-                global:'jQuery'
-            }
-        },
-        environment:{
+            amd:'jquery',
             /**
-             * Optional environment dependencies
+             * The global dependency, resolved as window.jQuery
              */
-            dependencies:[
-                /**
-                 * Reference window using a parameter named 'window'
-                 */
-                'window',
-                /**
-                 * Reference document using a parameter named 'doc'.
-                 */
-                {
-                    alias:'doc',
-                    name:'document'
-                }]
-        },
-        /**
-         * Configuration information
-         */
-        configuration:{
-            debug:{
-                srcOutput:'../output/%module%-debug.js',
-                mapOutput:'../output/%module%-debug.js.map'
-            }
+            global:'jQuery'
         }
-    });
+    },
+    environment:{
+        /**
+         * Optional environment dependencies
+         */
+        dependencies:[
+            /**
+             * Reference window using a parameter named 'window'
+             */
+            'window',
+            /**
+             * Reference document using a parameter named 'doc'.
+             */
+            {
+                alias:'doc',
+                name:'document'
+            }]
+    },
+    /**
+     * Configuration information
+     */
+    configuration:{
+        debug:{
+            srcOutput:'../output/%module%-debug.js',
+            mapOutput:'../output/%module%-debug.js.map'
+        }
+    }
+});
+```
 
 Building the module via the command line:
 
@@ -110,3 +112,25 @@ Source maps are automatically created for the module. Source maps allow you to d
 if you had deployed the individual files it is comprised of (currently only supported in chrome). For more
 information on source maps including how to enable them,
 check out http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/
+
+File Monitoring
+---------------
+
+When developing it can be useful to automatically build modules as you change any of its files. To enable this, just
+add the --monitor option to the command line.
+
+    node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive --configuration debug --monitor
+
+Error Strategy
+--------------
+
+During development files may get renamed, deleted, etc. because of this it may be useful to specify how missing module
+files should be handled. There are three different options:
+
+IGNORE: Ignore errors
+THROW:  An exception it thrown
+TODO:   A '// TODO: ' comment is output in the module file which provides details of the missing file.
+
+    node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive --configuration debug --monitor --error-strategy TODO
+
+
