@@ -11,7 +11,7 @@ The PhotonJS.Build module builder can be used to build module files supporting m
 packaging information in a separate file developers do not have to pollute their source code with module specific
 semantics, they can focus on writing clear maintainable code which can be deployed easily to a variety of module formats.
 
-Below is an example module file:
+Example module file:
 
 ```javascript
 ({
@@ -70,12 +70,12 @@ Below is an example module file:
 });
 ```
 
-Building the module via the command line:
+Building via the command line:
 
     node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
         --configuration debug
 
-Produces:
+Output:
 
 ```javascript
 (function(window, doc){
@@ -123,6 +123,8 @@ File Monitoring
 When developing it can be useful to have you modules rebuilt automatically whenever you change any of its files. To
 enable this, simply specify the --monitor option.
 
+Example:
+
     node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
         --configuration debug --monitor
 
@@ -146,6 +148,8 @@ Formats
 
 By default, the module produced will support all available formats (current AMD & Global). To manually specify
 which formats the module should support use the --formats command line option.
+
+Example:
 
     node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
         --configuration debug --formats Amd
