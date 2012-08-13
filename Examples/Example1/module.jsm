@@ -23,7 +23,7 @@
     },
     configuration : {
         debug : {
-            srcOutput : '%module%-debug.js',
+            srcOutput : '../output/%module%-debug.js',
             mapOutput : '../output/%module%-debug.js.map'
         }
     }

@@ -1,24 +1,24 @@
-var _vm = require('vm'),
-    _fs = require('fs'),
-    _path = require('path'),
-    _build = require('build'),
+var _path = require('path'),
+    _build = require('module-build'),
     _system = require('system'),
-    _os = require('os');
+    _os = require('os'),
+    _fwatch = require('fwatch'),
+    _fs = require('fs');
 
-function loadModuleFile(moduleFile, callback) {
-    _fs.readFile(moduleFile, function (err, moduleContent) {
-        var module = null;
-        if (!err) {
-            try {
-                module = _vm.runInThisContext(String(moduleContent));
-            }
-            catch (e) {
-                err = e;
-            }
-        }
 
-        callback(err, module);
-    });
+var watchers = {
+
+};
+
+function containsNonOutputFile(files, outputs) {
+    if (!files) {
+        return false;
+    }
+    for (var i = 0, n = files.length; i < n; i++) {
+        if (outputs.indexOf(files[i]) === -1)
+        return true;
+    }
+    return false;
 }
 
 function buildModuleFiles(moduleFiles, options, callback) {
@@ -28,12 +28,30 @@ function buildModuleFiles(moduleFiles, options, callback) {
     moduleFiles.forEach(function (moduleFileName) {
         moduleFileName = _path.resolve(moduleFileName);
 
-        var builder = new _build.ModuleBuilder(options);
+        var builder = new _build.ModuleBuilder(options), outputs;
         try {
-            builder.buildFile(moduleFileName);
+            outputs = builder.buildFile(moduleFileName);
         }
         catch (e) {
             console.error(e);
+        }
+
+
+        if (options.monitor) {
+            var moduleDirectory = _path.dirname(moduleFileName);
+            var watcher = watchers[moduleFileName] = new _fwatch.DirectoryWatcher(moduleDirectory);
+
+            _fs.watchFile(moduleDirectory, function() {
+                 console.log('changed');
+            });
+            watcher.on('change', function (created, deleted, modified) {
+                var outputFiles = [outputs.srcOutput, outputs.mapOutput];
+                if (containsNonOutputFile(created, outputFiles) ||
+                    containsNonOutputFile(deleted, outputFiles) ||
+                    containsNonOutputFile(modified, outputFiles)) {
+                    outputs = builder.buildFile(moduleFileName);
+                }
+            });
         }
 
         if (!--outstandingModuleCount) {
@@ -42,7 +60,7 @@ function buildModuleFiles(moduleFiles, options, callback) {
     });
 }
 
-var options = require('./build-js-arguments').parse();
+var options = _build.options.parse();
 buildModuleFiles(options.modules, options);
 
 //var exampleFolder = _path.resolve('Examples\\Example1');

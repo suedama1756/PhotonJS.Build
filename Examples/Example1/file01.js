@@ -6,7 +6,7 @@ var file1Message;
  */
 module.getMessage1 = function () {
     if (!file1Message) {
-        file1Message = "Message from file 1";
+        file1Message = "Message from file 1.";
     }
     return file1Message;
 }
