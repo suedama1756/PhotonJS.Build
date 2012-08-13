@@ -136,8 +136,8 @@ files should be handled. There are three different options:
 * THROW:  An exception it thrown
 * TODO:   A '// TODO: ' comment is output in the module file which provides details of the missing file.
 
-    node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
-        --configuration debug --monitor --error-strategy TODO
+`node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
+    --configuration debug --monitor --error-strategy TODO`
 
 Formats
 -------
