@@ -120,8 +120,8 @@ check out http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/
 File Monitoring
 ---------------
 
-When developing it can be useful to automatically build modules as you change any of its files. To enable this, just
-add the --monitor option to the command line.
+When developing it can be useful to have you modules rebuilt automatically whenever you change any of its files. To
+enable this, simply specify the --monitor option.
 
     node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
         --configuration debug --monitor
