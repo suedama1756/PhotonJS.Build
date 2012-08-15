@@ -214,3 +214,42 @@ dependencies: {
 }
 ```
 
+Grunt Support
+-------------
+
+The module-grunt module provides tasks for building using grunt. The example below demonstrates how
+to configure the grunt.js file. It also shows how the 'watch' task can be used to trigger builds
+automatically when files change.
+
+```javascript
+/*global module:false*/
+module.exports = function (grunt) {
+    grunt.initConfig({
+        module:{
+            photon:{
+                jsm:'../source/core/photon.jsm',
+                options:{
+                    configuration:'debug',
+                    version:'0.7.0.1'
+                }
+            }
+        },
+        watch: {
+           module : {
+               files: ['../source/core/**/*.js', '../source/core/**/*.jsm'],
+               tasks: 'module'
+           }
+        },
+        lint: {
+            files: ['grunt.js', '../output/photon-debug.js']
+        }
+    });
+
+    // default task.
+    grunt.registerTask('default', 'module lint');
+
+    // load module-grunt tasks
+    grunt.loadTasks('../../Build/node_modules/module-grunt');
+};
+```
+
