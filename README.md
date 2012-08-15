@@ -158,8 +158,8 @@ Example:
     node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
         --configuration debug --formats amd
 
-Module Versions
----------------
+Versioning
+----------
 
 Modules can be versioned by specifying a version property in the '.jsm' file, or using the '--version' command line
 switch. If both are specified the command line '--version' wins.
