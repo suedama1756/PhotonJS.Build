@@ -348,3 +348,23 @@ exports['When generating with global anonymous'] = {
         test.done();
     }
 }
+
+exports['When generating with version'] = {
+    setUp:function (callback) {
+        this.mock_ = mockGlobal();
+        this.moduleText_ = generateAndEvaluateModule(basicModule,
+            {
+                formats:['global'],
+                version:'0.1.2.3'
+            }, ['module.isInitialized = true;']);
+        callback();
+    },
+    tearDown : function(callback) {
+        this.mock_.close();
+        callback();
+    },
+    'Should apply version' : function(test) {
+        test.ok(window.module.version === '0.1.2.3');
+        test.done();
+    }
+}
