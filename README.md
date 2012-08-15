@@ -17,6 +17,10 @@ Example module file:
 ({
     name:'photon.examples.module',
     /**
+     * Module version number.
+     */
+    version:'0.7.0.2',
+    /**
      * An ordered list of the files that make up the module.
      */
     files:[
@@ -181,7 +185,7 @@ Generates:
         factory(ns);
     }
 })(function(myModule) {
-    myModule.version = '0.1.2.3';
+    myModule.version = '0.7.0.2';
 });
 ```
 
