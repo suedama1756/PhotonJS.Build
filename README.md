@@ -217,9 +217,9 @@ dependencies: {
 Grunt Support
 -------------
 
-The module-grunt module provides tasks for building using grunt. The example below demonstrates how
-to configure the grunt.js file. It also shows how the 'watch' task can be used to trigger builds
-automatically when files change.
+[Grunt](https://github.com/cowboy) support is provided via the 'module' task. The example below demonstrates how
+to configure the grunt.js file to build a module. It also shows how the 'watch' task
+can be used to trigger builds automatically whenever a file changes.
 
 ```javascript
 /*global module:false*/
@@ -252,4 +252,8 @@ module.exports = function (grunt) {
     grunt.loadTasks('../../Build/node_modules/module-grunt');
 };
 ```
+
+Example:
+
+    node ./grunt/grunt/bin/grunt module watch:module
 
