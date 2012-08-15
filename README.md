@@ -154,6 +154,37 @@ Example:
     node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
         --configuration debug --formats amd
 
+Module Versions
+---------------
+
+Modules can be versioned by specifying a version property in the '.jsm' file, or using the '--version' command line
+switch. If both are specified the command line '--version' wins.
+
+Example:
+
+    node build-js.js --jsm Examples/Example1/module.jsm --add-source-map-directive
+        --configuration debug --formats global --version 0.7.0.2
+
+```javascript
+({
+    name : 'myModule',
+    version: 0.7.0.1
+})
+```
+
+Generates:
+
+```javascript
+(function(factory) {
+    if (window) {
+        var ns = window.myModule = window.myModule || {};
+        factory(ns);
+    }
+})(function(myModule) {
+    myModule.version = '0.1.2.3';
+});
+```
+
 Advanced AMD RequireJS Options
 ----------------------------
 

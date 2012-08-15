@@ -349,7 +349,7 @@ exports['When generating with global anonymous'] = {
     }
 }
 
-exports['When generating with version'] = {
+exports['When generating with version specified in options'] = {
     setUp:function (callback) {
         this.mock_ = mockGlobal();
         this.moduleText_ = generateAndEvaluateModule(basicModule,
@@ -364,6 +364,45 @@ exports['When generating with version'] = {
         callback();
     },
     'Should apply version' : function(test) {
+        test.ok(window.module.version === '0.1.2.3');
+        test.done();
+    }
+}
+
+exports['When generating with version specified in module'] = {
+    setUp:function (callback) {
+        this.mock_ = mockGlobal();
+        this.moduleText_ = generateAndEvaluateModule({ name : 'module', version : '1.2.3.4'},
+            {
+                formats:['global']
+            }, []);
+        callback();
+    },
+    tearDown : function(callback) {
+        this.mock_.close();
+        callback();
+    },
+    'Should apply version' : function(test) {
+        test.ok(window.module.version === '1.2.3.4');
+        test.done();
+    }
+}
+
+exports['When generating with version specified in module and options'] = {
+    setUp:function (callback) {
+        this.mock_ = mockGlobal();
+        this.moduleText_ = generateAndEvaluateModule({ name : 'module', version : '1.2.3.4'},
+            {
+                formats:['global'],
+                version:'0.1.2.3'
+            }, []);
+        callback();
+    },
+    tearDown : function(callback) {
+        this.mock_.close();
+        callback();
+    },
+    'Should apply version from options' : function(test) {
         test.ok(window.module.version === '0.1.2.3');
         test.done();
     }
