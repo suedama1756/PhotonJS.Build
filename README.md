@@ -3,6 +3,23 @@ PhotonJS.Build
 
 NodeJS based build tools developed for [PhotonJS](https://github.com/suedama1756/PhotonJS)
 
+There are currently a few different JavaScript module formats out in the wild, and it's true to say that there are
+mixed opinions on the various approaches. In addition to this, it now seems that ECMA (Harmony) support for modules
+will be postponed till a future version.
+
+Personally, I believe that the module patterns shown in many example confuse dependency injection concepts with
+packaging, and do not address the needs of modern large scale enterprise applications
+(hopefully I'll have time to elaborate on this in a blog sometime).
+
+Regardless of these facts/opinions the following statements are probably true:
+
+* We don't want to tie ourselves too tightly to a specific module format.
+* We don't want to write more dependency management code per file than functional code.
+* We want a fluent development experience that does not discourage refactoring.
+* We want to easily support ECMA/future modules formats without too much effort.
+
+PhotonJS.Build hopes to address these issues.
+
 Module Builder
 --------------
 
