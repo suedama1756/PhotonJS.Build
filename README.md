@@ -274,3 +274,23 @@ Example:
 
     node ./grunt/grunt/bin/grunt module watch:module
 
+Grunt Closure Compiler Support
+------------------------------
+
+[Grunt](https://github.com/cowboy) support the Google [Closure Compiler](https://developers.google.com/closure/compiler/)
+ is supported via the 'closureCompiler' task.
+
+The snippet below shows how to configure the 'closureCompiler' task.
+
+```javascript
+closureCompiler: {
+    photon : {
+        js : ['../output/photon-debug.js'],
+        jsOutputFile : '../output/photon-min.js',
+        closurePath : './tools/Closure',
+        options: {
+            'compilation_level' : 'SIMPLE_OPTIMIZATIONS'
+        }
+    }
+}
+```
