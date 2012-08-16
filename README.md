@@ -7,7 +7,7 @@ There are currently a few different JavaScript module formats out in the wild, a
 mixed opinions on the various approaches. In addition to this, it now seems that ECMA (Harmony) support for modules
 will be postponed till a future version.
 
-Personally, I believe that the module patterns shown in many example confuse dependency injection concepts with
+Personally, I believe that the module patterns shown in many examples confuse dependency injection concepts with
 packaging, and do not address the needs of modern large scale enterprise applications
 (hopefully I'll have time to elaborate on this in a blog sometime).
 
