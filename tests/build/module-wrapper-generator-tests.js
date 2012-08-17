@@ -407,3 +407,23 @@ exports['When generating with version specified in module and options'] = {
         test.done();
     }
 }
+
+exports['When generating amd with no dependencies'] = {
+    setUp:function (callback) {
+        this.mock_ = mockAmd();
+        this.moduleText_ = generateAndEvaluateModule({ name : 'module' },
+            {
+                formats:['amd'],
+                version:'0.1.2.3'
+            }, []);
+        callback();
+    },
+    tearDown : function(callback) {
+        this.mock_.close();
+        callback();
+    },
+    'Should generate factory call correctly' : function(test) {
+        test.ok(window.module.version === '0.1.2.3');
+        test.done();
+    }
+}

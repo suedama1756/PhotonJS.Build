@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="37eeb0a9-b01d-4a2e-aab4-9b14953e5962" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/module-build/module-wrapper-generator.js" afterPath="$PROJECT_DIR$/node_modules/module-build/module-wrapper-generator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/build/module-wrapper-generator-tests.js" afterPath="$PROJECT_DIR$/tests/build/module-wrapper-generator-tests.js" />
+    </list>
+    <ignored path="Build.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Build" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="module-wrapper-generator.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/node_modules/module-build/module-wrapper-generator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="115" column="21" selection-start="3936" selection-end="3936" vertical-scroll-proportion="0.05102041">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="module-generator.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/module-build/module-generator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="41" selection-start="2022" selection-end="2022" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="system.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/system/system.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="0" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="module-grunt.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/module-grunt/module-grunt.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="22" selection-start="2818" selection-end="2818" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Examples/Example1/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="module-builder.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/module-build/module-builder.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="26" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build-js.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build-js.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="9" selection-start="1678" selection-end="1816" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fwatch-directory-watcher.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/fwatch/fwatch-directory-watcher.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="0" selection-start="731" selection-end="731" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="module-wrapper-generator-tests.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/build/module-wrapper-generator-tests.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="422" column="19" selection-start="11764" selection-end="11764" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="photon.examples.module-debug.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Examples/output/photon.examples.module-debug.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="12" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/node_modules/build/build.js" />
+        <option value="$PROJECT_DIR$/node_modules/module-build/package.json" />
+        <option value="$PROJECT_DIR$/node_modules/module-build/module-builder.js" />
+        <option value="$PROJECT_DIR$/Examples/output/module-debug.js" />
+        <option value="$PROJECT_DIR$/node_modules/fwatch/fwatch-directory-watcher.js" />
+        <option value="$PROJECT_DIR$/Examples/Example1/file01.js" />
+        <option value="$PROJECT_DIR$/Examples/Example1/file02.js" />
+        <option value="$PROJECT_DIR$/Examples/Example1/module.jsm" />
+        <option value="$PROJECT_DIR$/node_modules/module-build/module-generator.js" />
+        <option value="$PROJECT_DIR$/node_modules/module-build/module-options.js" />
+        <option value="$PROJECT_DIR$/node_modules/module-build/module-grunt.js" />
+        <option value="$PROJECT_DIR$/build-js.js" />
+        <option value="$PROJECT_DIR$/node_modules/module-grunt/module-grunt.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/tests/build/module-wrapper-generator-tests.js" />
+        <option value="$PROJECT_DIR$/node_modules/module-build/module-wrapper-generator.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CSS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource ProjectPane="true" />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module-grunt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module-build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="output" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Example1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="settings.nodejs" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lib" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/node_modules/module-grunt" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Nodeunit.Test">
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node JS" working-dir="$PROJECT_DIR$" coffeescript-run="false">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeunitConfigurationType" factoryName="Nodeunit">
+      <setting name="nodePath" value="/usr/local/bin/node" />
+      <envs />
+      <setting name="passParentEnvVars" value="true" />
+      <setting name="nodeunitModuleDir" value="$PROJECT_DIR$/node_modules/nodeunit" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="testType" value="JS_FILE" />
+      <setting name="jsFile" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="Run" type="NodeJSConfigurationType" factoryName="Node JS" path-to-node="/usr/local/bin/node" path-to-js-file="build-js.js" application-parameters="--error-strategy TODO --jsm Examples/Example1/module.jsm --monitor --formats amd global --add-source-map-directive --configuration debug --monitor" working-dir="$PROJECT_DIR$" coffeescript-run="false">
+      <RunnerSettings RunnerId="NodeJS.debug" />
+      <ConfigurationWrapper RunnerId="NodeJS.debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Test" type="NodeunitConfigurationType" factoryName="Nodeunit">
+      <setting name="nodePath" value="/usr/local/bin/node" />
+      <envs />
+      <setting name="passParentEnvVars" value="true" />
+      <setting name="nodeunitModuleDir" value="$PROJECT_DIR$/node_modules/nodeunit" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="testType" value="DIRECTORY" />
+      <setting name="directory" value="tests" />
+      <RunnerSettings RunnerId="Nodeunit.debug" />
+      <RunnerSettings RunnerId="Nodeunit.run" />
+      <ConfigurationWrapper RunnerId="Nodeunit.debug" />
+      <ConfigurationWrapper RunnerId="Nodeunit.run" />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Node JS.Run" />
+      <item index="1" class="java.lang.String" itemvalue="Nodeunit.Test" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="37eeb0a9-b01d-4a2e-aab4-9b14953e5962" name="Default" comment="" />
+      <created>1344373781258</created>
+      <updated>1344373781258</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5678705" sideWeight="0.49752998" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.49752998" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21100917" sideWeight="0.4271482" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5554172" sideWeight="0.738885" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21100917" sideWeight="0.51307595" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5728518" sideWeight="0.256175" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.498132" sideWeight="0.6414961" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5031133" sideWeight="0.47494707" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="javascript-exception">
+          <properties />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="1388" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Examples/Example1/module.jsm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="26" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/fwatch/fwatch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/module-build/module-build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/module-build/module-options.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="22" selection-start="2432" selection-end="2432" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/output/photon.examples.module-debug.js.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="289" column="40" selection-start="8593" selection-end="8593" vertical-scroll-proportion="0.73568285" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/module-build/module-wrapper-generator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="21" selection-start="3936" selection-end="3936" vertical-scroll-proportion="0.05102041">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/module-build/module-generator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="41" selection-start="2022" selection-end="2022" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/system/system.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="0" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/module-grunt/module-grunt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="22" selection-start="2818" selection-end="2818" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/Example1/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/module-build/module-builder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="26" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="9" selection-start="1678" selection-end="1816" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/fwatch/fwatch-directory-watcher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="731" selection-end="731" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/build/module-wrapper-generator-tests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="422" column="19" selection-start="11764" selection-end="11764" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/output/photon.examples.module-debug.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="12" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
