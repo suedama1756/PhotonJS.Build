@@ -101,7 +101,7 @@ Output:
 ```javascript
 (function(window, doc){
     (function(factory) {
-        if (typeof define === 'function' && define['amd']) {
+        if (typeof define === 'function' && define.amd]) {
             define(['exports', 'jquery'], factory);
         } else if (window) {
             var nsi = 'photon.examples.module'.split('.'), ns = window;
