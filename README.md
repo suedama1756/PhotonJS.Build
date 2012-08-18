@@ -1,22 +1,21 @@
 PhotonJS.Build (now with added Grunt)
 =====================================
 
-NodeJS based build tools developed for [PhotonJS](https://github.com/suedama1756/PhotonJS)
-
 There are currently a few different JavaScript module formats out in the wild, and it's true to say that there are
 mixed opinions on the various approaches. In addition to this, it now seems that ECMA (Harmony) support for modules
 will be postponed till a future version.
 
-Personally, I believe that the module patterns shown in many examples confuse dependency injection concepts with
+The module patterns shown in many examples confuse dependency injection with
 packaging, and do not address the needs of modern large scale enterprise applications
-(hopefully I'll have time to elaborate on this in a blog sometime).
+(hopefully I'll have time to elaborate on this in a blog sometime). This does not mean
+that module handling libraries such as RequireJS, etc. should be avoided, it just means
+we need to think hard about what is the right level of granularity for our module, and
+the source files from which it is comprised.
 
-Regardless of these facts/opinions the following statements are probably true:
+Regardless where you stand on these issues, the follow is probably true:
 
-* We don't want to tie ourselves too tightly to a specific module format.
-* We don't want to write more dependency management code per file than functional code.
-* We want a fluent development experience that does not discourage refactoring.
-* We want to easily support ECMA/future modules formats without too much effort.
+* We don't want make our code too dependent on one particular format, unless we can help it.
+* We want an easy way convert existing libraries to work with our module format of choice.
 
 PhotonJS.Build hopes to address these issues.
 
