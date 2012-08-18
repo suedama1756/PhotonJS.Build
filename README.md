@@ -1,5 +1,5 @@
-PhotonJS.Build
-==============
+PhotonJS.Build (now with added Grunt)
+=====================================
 
 NodeJS based build tools developed for [PhotonJS](https://github.com/suedama1756/PhotonJS)
 
@@ -239,7 +239,6 @@ to configure the grunt.js file to build a module. It also shows how the 'watch' 
 can be used to trigger builds automatically whenever a file changes.
 
 ```javascript
-/*global module:false*/
 module.exports = function (grunt) {
     grunt.initConfig({
         module:{
@@ -274,6 +273,57 @@ Example:
 
     node ./grunt/grunt/bin/grunt module watch:module
 
+Dynamic Modules
+---------------
+
+A Dynamic module is a .jsm file that returns a function that in turn returns a module. The advantage of dynamic modules
+is that they can be passed properties which can be used to alter the module. For example this feature could be
+used to easily compile a custom module based on a subset of required 'features'.
+
+Example:
+
+// Example file that shows dynamic packaging dependent on the features requested
+(function(properties) {
+    var result =
+    {
+        name:'photon.examples.module',
+        files :[]
+    }
+
+    var features = properties.features;
+    function isFeatureIncluded(feature) {
+        return !features || !features.length ? true : features.indexOf(feature) !== -1;
+    }
+
+    if (isFeatureIncluded('AwesomeFeature')) {
+        result.files.push('awesomeFile1.js', 'awesomeFile2.js');
+    }
+
+    if (isFeatureIncluded('AdequateFeature')) {
+        result.files.push('adequateFile1.js', 'adequateFile2.js');
+    }
+
+    return result;
+})
+
+
+```javascript
+
+// example showing hard coded grunt configuration, grunt properties could also be used...
+module:{
+    photon:{
+        jsm:'../source/core/photon.jsm',
+        options:{
+            properties:{
+                features:['AwesomeFeature', 'AdequateFeature']
+            }
+        }
+    }
+}
+
+```
+
+
 Grunt Closure Compiler Support
 ------------------------------
 
@@ -294,3 +344,4 @@ closureCompiler: {
     }
 }
 ```
+
