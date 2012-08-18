@@ -1,4 +1,4 @@
-PhotonJS.Build (now with added Grunt)
+PhotonJS.Build (now with added [Grunt](https://github.com/cowboy))
 =====================================
 
 There are currently a few different JavaScript module formats out in the wild, and it's true to say that there are
@@ -16,6 +16,7 @@ Regardless where you stand on these issues, the follow is probably true:
 
 * We don't want make our code too dependent on one particular format, unless we can help it.
 * We want an easy way convert existing libraries to work with our module format of choice.
+* We want to easily include it in our build process.
 
 PhotonJS.Build hopes to address these issues.
 
