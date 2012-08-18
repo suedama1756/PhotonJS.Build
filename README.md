@@ -282,6 +282,7 @@ used to easily compile a custom module based on a subset of required 'features'.
 
 Example:
 
+```javascript
 // Example file that shows dynamic packaging dependent on the features requested
 (function(properties) {
     var result =
@@ -304,7 +305,8 @@ Example:
     }
 
     return result;
-})
+});
+```
 
 
 ```javascript
