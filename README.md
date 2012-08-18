@@ -1,4 +1,4 @@
-PhotonJS.Build (now with added [Grunt](https://github.com/cowboy))
+PhotonJS.Build (now with added [Grunt](https://github.com/cowboy/grunt))
 =====================================
 
 There are currently a few different JavaScript module formats out in the wild, and it's true to say that there are
@@ -234,7 +234,7 @@ dependencies: {
 Grunt Support
 -------------
 
-[Grunt](https://github.com/cowboy) support is provided via the 'module' task. The example below demonstrates how
+[Grunt](https://github.com/cowboy/grunt) support is provided via the 'module' task. The example below demonstrates how
 to configure the grunt.js file to build a module. It also shows how the 'watch' task
 can be used to trigger builds automatically whenever a file changes.
 
