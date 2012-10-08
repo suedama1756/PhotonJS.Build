@@ -1,0 +1,23 @@
+To enable support for custom wrappers, dynamic code etc. we will add support for virtual files into the
+module file list.
+
+Example: Demonstrates writing strict and non strict sections within the module.
+
+files : [
+    function(writer) {
+    	writer.writeln('(function() {');
+    	writer.indent(1);
+    	writer.writeln('"use strict";');
+    },
+    'file01',
+    'file02',
+    'file03',
+    function(writer} {
+        writer.indent(-1);
+        writer.writeln('})();');
+    }
+]
+
+This approach will give us the maximum degree of flexibility.
+
+In addition to this we will also support "use strict" out of the box, we should probably default to use strict === true.

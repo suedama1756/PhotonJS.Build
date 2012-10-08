@@ -301,7 +301,7 @@ Example:
     }
 
     if (isFeatureIncluded('AdequateFeature')) {
-        result.files.push('adequateFile1.js', 'adequateFile2.js');
+        result.files.push('adequateFile1.js', 'adequateFile2.js');F
     }
 
     return result;

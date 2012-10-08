@@ -423,7 +423,9 @@ exports['When generating amd with no dependencies'] = {
         callback();
     },
     'Should generate factory call correctly' : function(test) {
-        test.ok(window.module.version === '0.1.2.3');
+        test.deepEqual(defineLog[0].dependencies,
+            ['exports']);
+        test.done();
         test.done();
     }
 }
