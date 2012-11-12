@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Tests" type="NodeunitConfigurationType" factoryName="Nodeunit">
+    <setting name="nodePath" value="C:/Program Files/nodejs/node" />
+    <envs />
+    <setting name="passParentEnvVars" value="true" />
+    <setting name="nodeunitModuleDir" value="$PROJECT_DIR$/../../nodeunit/node_modules/nodeunit" />
+    <setting name="workingDirectory" value="$PROJECT_DIR$" />
+    <setting name="testType" value="DIRECTORY" />
+    <setting name="directory" value="tests/build" />
+    <RunnerSettings RunnerId="Nodeunit.debug" />
+    <RunnerSettings RunnerId="Nodeunit.run" />
+    <ConfigurationWrapper RunnerId="Nodeunit.debug" />
+    <ConfigurationWrapper RunnerId="Nodeunit.run" />
+    <method />
+  </configuration>
+</component>

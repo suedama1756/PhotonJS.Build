@@ -12,6 +12,18 @@ var basicModule = {
     }
 };
 
+var commonJSModule = {
+    name:'module',
+    dependencies:{
+        'fileSystem':{
+            commonjs:'fs'
+        },
+        'path':{
+            commonjs:'path'
+        }
+    }
+};
+
 var nestedNamespaceModule = {
     name:'nested.module',
     dependencies:{
@@ -426,6 +438,22 @@ exports['When generating amd with no dependencies'] = {
         test.deepEqual(defineLog[0].dependencies,
             ['exports']);
         test.done();
-        test.done();
     }
 }
+
+exports["When generating common JS"] = {
+    setUp:function (callback) {
+        generateAndEvaluateModule(commonJSModule, { formats:['commonJS'] }, ['factoryParameters = Array.prototype.slice.call(arguments, 1)']);
+        callback();
+    },
+    tearDown:function (callback) {
+        callback();
+    },
+    "Should name dependencies correctly in factory":function (test) {
+        var params = factoryParameters;
+        test.ok((params [0] === require('fs') && params [1] === require('path')) ||
+            (params [1] === require('fs') && params [0] === require('path')));
+        test.done();
+    }
+};
+
